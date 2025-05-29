@@ -23,6 +23,20 @@ selection, session configuration persistence, and safe concurrent access for bro
 
 ### Steps
 
+#### Direct installation
+
+Just use pip:
+```bash
+pip install docker-chrome-session-manager
+```
+
+Or Poetry:
+```bash
+poetry add docker-chrome-session-manager
+```
+
+#### Manual installation
+
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/FINWAX/docker-chrome-session-manager.py.git
