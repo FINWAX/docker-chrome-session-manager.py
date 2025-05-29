@@ -1,0 +1,22 @@
+services:
+  chrome1:
+    image: selenium/standalone-chrome:latest
+    container_name: selenium-chrome-1
+    ports:
+      - "4444:4444"
+    shm_size: "2gb"
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    volumes:
+      - ./sessions:/sessions:rw
+
+  chrome2:
+    image: selenium/standalone-chrome:latest
+    container_name: selenium-chrome-2
+    ports:
+      - "4445:4444"
+    shm_size: "2gb"
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    volumes:
+      - ./sessions:/sessions:rw
