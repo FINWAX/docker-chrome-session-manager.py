@@ -1,6 +1,6 @@
 [project]
 name = "docker-chrome-session-manager"
-version = "1.0.2"
+version = "1.0.3"
 description = "A Python module for managing Selenium Chrome sessions across multiple Docker containers."
 authors = [{ name = "FINWAX", email = "waxbid@gmail.com" }]
 license = { file = "LICENSE" }
