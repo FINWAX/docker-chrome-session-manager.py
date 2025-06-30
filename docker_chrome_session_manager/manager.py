@@ -199,7 +199,7 @@ class SessionManager:
             return None
         for attempt in range(self.config.container_path_choice_retries):
             for container_path in self.container_paths:
-                e = None
+                error_message = ''
                 try:
                     url = f"{container_path}/wd/hub/status"
                     response = requests.get(url, timeout=self.config.container_response_timeout)
@@ -207,10 +207,10 @@ class SessionManager:
                         logger.debug(f"Container available: {container_path} on attempt {attempt + 1}.")
                         return container_path
                 except Exception as e:
-                    pass
+                    error_message = str(e)
                 logging.log(
-                    logging.WARNING if e else logging.INFO,
-                    f"Container unavailable: {container_path} on attempt {attempt + 1}, error: {str(e)}."
+                    logging.WARNING if error_message else logging.INFO,
+                    f"Container unavailable: {container_path} on attempt {attempt + 1}, error: {error_message}."
                 )
             logger.debug(
                 f"No free containers found on attempt {attempt + 1}, "
