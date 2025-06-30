@@ -5,7 +5,7 @@ A Python module for managing Selenium Chrome sessions across multiple Docker con
 It supports dynamic container selection, session configuration persistence, and safe concurrent access.
 """
 
-__version__ = "1.0.2"
+__version__ = "1.0.4"
 
 import logging
 
